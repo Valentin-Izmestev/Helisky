@@ -1,0 +1,195 @@
+.services-section{
+    padding-top: 100px;
+    padding-bottom: 50px;
+    .section-title{
+        margin-bottom: 40px;
+        text-align: center;
+    }
+}
+
+.hely-spoiler-box{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    align-items: start;
+}
+.hely-spoiler{
+    background-color: var(--bg-alt);
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    .hely-spoiler__trigger {
+
+    }
+    .hely-spoiler__body{ 
+        position: relative;
+        height: 0;
+        overflow: hidden;
+        transition: var(--great-transition);
+        &::before{
+            content: '';
+            position: relative;
+            display: block; 
+            margin-bottom: 15px; 
+            height: 16px;
+            width: 100%;
+            border-bottom: 1px solid #414952;
+        }
+    }
+
+}
+
+
+.hely-spoiler-trigger{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    width: 100%;
+    background-color: transparent;
+    text-align: left;
+    cursor: auto;
+    .hely-spoiler-trigger__icon{
+        width: 32px;
+        height: 32px;
+        mask-position: center center;
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        background-color: var(--red);
+        &--cub{
+            mask-image: url(../img/cub.svg);
+        }
+        &--men{
+            mask-image: url(../img/men.svg);
+        }
+        &--fire{
+            mask-image: url(../img/fire.svg);
+        }
+        &--road{
+            mask-image: url(../img/road.svg);
+        }
+    }
+    .hely-spoiler-trigger__caption{
+        font-size: 16px;
+        line-height: 1.14;
+        font-weight: 500;
+        color: var(--color);
+    }
+    .hely-spoiler-trigger__cross{
+        flex-shrink: 0;
+        margin-left: auto;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: var(--red);
+            transform: translateY(-50%);
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 1px;
+            height: 100%;
+            background-color: var(--red);
+            transform: translateX(-50%) rotate(0);
+            transition: var(--great-transition);
+        }
+    }
+    &--active{
+        .hely-spoiler-trigger__cross{
+            &::after{ 
+                transform: translateX(-50%) rotate(90deg); 
+            }
+        }
+    }
+}
+
+
+.direction-list{
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    .direction-list__item{
+    
+    }
+    .direction-list__date{
+        display: block;
+        margin-bottom: 4px;
+        font-size: 12px;
+        line-height: 1.14;
+        color: var(--red);
+        font-weight: 400;
+    }
+    .direction-list__direction{
+        display: block;
+        font-size: 15px;
+        line-height: 1.14;
+        color: var(--color);
+        font-weight: 500;
+    }
+}
+.world-map-img{
+    display: block;
+    max-width: 1275px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+// ===================================
+
+@media screen and (max-width: 1100px){
+    .services-section{
+        padding-top: 40px;
+        padding-bottom: 40px;
+        .inner{
+            display: flex;
+            flex-direction: column;
+            .section-title{
+                order: 1;
+            }
+            .hely-spoiler-box{
+                order: 3;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .world-map-img{ 
+                order: 2;
+                margin-top: 0;
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 600px){
+    .services-section{
+        padding-top: 20px;
+        padding-bottom: 24px;
+        .inner{ 
+            .section-title{
+                order: 2;
+            }
+            .hely-spoiler-box{
+                order: 3;
+                grid-template-columns:1fr;
+                grid-gap: 4px;
+            }
+            .world-map-img{ 
+                order: 1;
+                margin-top: 0;
+                margin-bottom: 40px;
+            }
+        }
+    } 
+}

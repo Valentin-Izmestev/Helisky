@@ -1,0 +1,227 @@
+.footer{
+    position: relative;
+    background-color: var(--bg-alt);
+    overflow: hidden;
+    .inner{
+        padding-right: 0;
+        display: grid;
+        grid-template-columns: 1fr 1.62fr;
+        grid-template-areas: "sectionTitle mapBox"  
+                             "contactBox mapBox";
+        grid-row-gap: 40px;
+        grid-column-gap: 50px;
+    }
+    .section-title{
+        grid-area: sectionTitle;
+        padding-top: 117px;
+    }
+    .contact-box{
+        grid-area: contactBox;
+    }
+    .map-box{
+        position: relative;
+        grid-area: mapBox; 
+    }
+}
+.contact-box{
+    padding-bottom: 70px;
+    box-sizing: border-box;
+    .contact-elem{
+        &:not(:first-child){
+            border-top: 1px solid #414952;
+        }
+    } 
+}
+.contact-elem{
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    padding: 40px 0;
+    box-sizing: border-box;
+    .contact-elem__caption{
+        font-size: 24px;
+        font-weight: 700;
+    }
+    .contact-elem__address{
+        font-weight: 400;
+        line-height: 1.4;
+    }
+    .contact-list{
+        
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        li{
+            position: relative;
+            padding-left: 32px;
+            box-sizing: border-box;
+            a{
+                color: var(--color);
+                white-space: nowrap;
+                font-size: 20px;
+                transition: var(--great-transition);
+                &:hover{
+                    color: var(--red);
+                    text-decoration: none;
+                }
+            }
+            span.red{
+                display: inline-block;
+                margin: 0 2px;
+            }
+            &:before{
+                content: '';
+                position: absolute;
+                top: 4px;
+                left: 0;
+                width: 24px;
+                height: 24px;
+                mask-size:contain;
+                mask-position: center center;
+                mask-repeat: no-repeat;
+                background-color: var(--red);
+            }
+            &.contact-list__tel{
+                &::before{
+                    mask-image: url(../img/phone-icon.svg);
+                } 
+            }
+            &.contact-list__email{
+                &::before{
+                    mask-image: url(../img/mail-icon.svg);
+                } 
+            }
+        }
+    }  
+}
+.map-simulation{ 
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../image/map-test.jpg)
+}
+
+#map{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 109%;
+    height: 100%;
+}
+
+
+
+// ==========================================================
+@media screen and (max-width: 1200px){
+    .footer {
+        background-color: var(--bg);
+        .inner {
+            padding-right: 0;
+            padding-left: 0;
+            display: -ms-grid;
+            display: grid; 
+            grid-template-columns: 1fr; 
+            grid-template-areas:
+                "sectionTitle "
+                "mapBox"
+                "contactBox";
+            grid-row-gap: 0;
+            grid-column-gap: 0;
+        }
+        .section-title{
+            padding: 0 20px;
+            padding-top: 80px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .map-box{
+            height: 500px;
+        }
+        .contact-box{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        
+    }
+    .contact-box {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 64px;
+        padding-bottom: 50px;
+        box-sizing: border-box;
+        .contact-elem{
+            &:not(:first-child) {
+                border-top: none;
+            }
+        }
+    }
+    .contact-elem{
+        padding: 0;
+    }
+}
+@media screen and (max-width: 950px){
+    .contact-elem{
+        gap: 24px;
+        .contact-elem__caption{
+            font-size: 21px;
+        }
+        .contact-list {
+            li {
+                &:not(:first-child){
+                    margin-top: 10px;
+                }
+                &:before{
+                    top: 1px;
+                }
+                a{
+                    font-size: 16px;
+                }
+            }
+        }
+    } 
+}
+@media screen and (max-width: 650px){
+    .footer {
+        .map-box{
+            display: none;
+        }
+        .section-title { 
+            padding-top: 48px;
+            margin-bottom: 24px; 
+        }
+        
+    }
+    .contact-box { 
+        display: grid;
+        grid-gap: 10px; 
+        grid-template-columns: 1fr;
+        padding-top: 0;
+        padding-bottom: 48px; 
+        box-sizing: border-box;
+    }
+    .contact-elem{
+        padding: 20px;
+        border-radius: 8px;
+        gap: 16px;
+        background-color: var(--bg-alt);
+        .contact-elem__caption {
+            font-size: 20px;
+        }
+        .contact-elem__address{
+            font-size: 16px;
+        }
+        .btn{
+            width: 100%;
+        }
+    }
+}
+@media screen and (max-width: 600px){
+    .footer {
+        .section-title, .contact-box {
+            padding-left: 14px; 
+            padding-right: 14px; 
+        } 
+    }
+}

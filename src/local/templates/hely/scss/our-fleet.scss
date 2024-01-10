@@ -1,0 +1,217 @@
+.our-fleet-section{
+    position: relative;
+    padding-top: 90px; 
+    box-sizing: border-box;
+    overflow: hidden;
+    .section-title{
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .subtitle,
+    .section-description{
+        max-width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .subtitle{ 
+        margin-bottom: 20px;
+        font-size: 24px; 
+        color: var(--red);
+        font-weight: 500;
+    }
+    .section-description{
+        max-width: 1026px;
+        margin-bottom: 80px;
+        font-size: 20px;  
+    }
+    
+}
+.heli-slider-box{
+    position: relative;
+    
+    &::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 55%;
+        background-color: var(--bg-alt);
+    }
+}
+.heli-slider-inner{
+    padding-right: 0;
+}
+.heli-ttx{
+    padding-top: 50px;
+    background-color: var(--bg-alt);
+    padding-bottom: 87px;
+    box-sizing: border-box;
+    .heli-ttx__caption{
+        margin-bottom: 40px;
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 1.14;
+    }
+    .heli-ttx__columns-box{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    .heli-ttx__left-col{
+        width: 55%;
+        max-width: 755px;
+    }
+    .heli-ttx__right-col{
+        width: 45%;
+        max-width: 630px;
+    }
+    .heli-ttx__h4{
+        margin-bottom: 16px;
+        font-size: 18px;
+        font-weight: 700;
+    } 
+    .link-to{
+        margin: 0 auto;
+        margin-top: 12px;
+    }
+}
+.heli-ttx-list{ 
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    .heli-ttx-list__item{
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px solid #414952;
+        font-size: 14px; 
+        box-sizing: border-box;
+    }
+    .heli-ttx-list__key{
+        font-weight: 400;
+    }
+    .heli-ttx-list__value{
+        font-weight: 500;
+        color: var(--red);
+    }
+}
+
+.heli-slider{
+    width: 116%;
+}
+.heli-slider-item{
+    position: relative;
+    // width: 600px;
+    border-radius: 8px;
+    padding-top: 66.86%;
+    box-sizing: border-box;
+    overflow: hidden; 
+
+    img{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; 
+        object-fit: cover;
+        object-position: center center;
+    }
+    video{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center; 
+    }
+}
+
+
+
+// =====================================
+@media screen and (max-width: 950px){
+ 
+    .our-fleet-section {
+        padding-top: 40px;
+        .subtitle {
+            margin-bottom: 20px;
+            font-size: 20px; 
+        }
+        .section-description { 
+            margin-bottom: 72px;
+            font-size: 18px;
+        }
+    }  
+    .heli-ttx {
+        padding-bottom: 60px;
+        .heli-ttx__caption{
+            font-size: 28px;
+            margin-bottom: 35px;
+        }
+        .heli-ttx__columns-box { 
+            display: flex; 
+            flex-direction: column;
+            justify-content: flex-start; 
+            align-items: flex-start;
+            gap: 30px;
+        } 
+        .heli-ttx__left-col,
+        .heli-ttx__right-col{
+            max-width: 100%;
+            width: 100%;
+        }
+        .heli-ttx__h4{
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+    } 
+    
+}
+@media screen and (max-width: 600px){
+    .our-fleet-section {
+        padding-top: 24px;
+        .section-title{
+            margin-bottom: 16px;
+        }
+        .subtitle {
+            margin-bottom: 8px;
+            font-size: 15px; 
+        }
+        .section-description { 
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+    } 
+    .heli-ttx {
+        padding-top: 24px;
+        padding-bottom: 48px;
+
+        .heli-ttx__caption{
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .heli-ttx__columns-box {  
+            gap: 24px;
+        } 
+        .heli-ttx__left-col,
+        .heli-ttx__right-col{
+            max-width: 100%;
+            width: 100%;
+        }
+        .heli-ttx__h4{
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+    } 
+}
+@media screen and (max-width: 500px){
+    .heli-slider{
+        width: 135%;
+    }
+}
