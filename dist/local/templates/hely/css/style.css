@@ -1823,6 +1823,154 @@ a {
   cursor: auto;
 }
 
+.preloader {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg);
+  z-index: 1000;
+  -webkit-transition: all 400ms ease;
+  -o-transition: all 400ms ease;
+  transition: all 400ms ease;
+  visibility: visible;
+  opacity: 1;
+}
+.preloader.preloader-hide {
+  visibility: hidden;
+  opacity: 0;
+}
+.preloader.preloader-hide .main-circle,
+.preloader.preloader-hide .main-circle:before,
+.preloader.preloader-hide .green-circle,
+.preloader.preloader-hide .green-circle:before,
+.preloader.preloader-hide .brown-circle {
+  opacity: 0;
+}
+
+.main-circle {
+  width: 150px;
+  height: 150px;
+  border: 4px solid var(--red);
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  position: relative;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: rotate 2s infinite;
+          animation: rotate 2s infinite;
+  -webkit-transition: var(--great-transition);
+  -o-transition: var(--great-transition);
+  transition: var(--great-transition);
+}
+
+.main-circle:before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  content: "";
+  border: 4px solid transparent;
+  border-right: 4px solid var(--red);
+  -webkit-transform: rotate(40deg);
+      -ms-transform: rotate(40deg);
+          transform: rotate(40deg);
+  border-radius: 50%;
+  -webkit-transition: var(--great-transition);
+  -o-transition: var(--great-transition);
+  transition: var(--great-transition);
+}
+
+.green-circle {
+  -webkit-animation: rotate 2s infinite 0.4s;
+          animation: rotate 2s infinite 0.4s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 120px;
+  height: 120px;
+  border: 4px solid var(--color);
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  -webkit-transform: rotate(-20deg);
+      -ms-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+  border-radius: 50%;
+  position: relative;
+  -webkit-transition: var(--great-transition);
+  -o-transition: var(--great-transition);
+  transition: var(--great-transition);
+}
+
+.green-circle:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  border: 4px solid transparent;
+  border-right: 4px solid var(--color);
+  -webkit-transform: rotate(60deg);
+      -ms-transform: rotate(60deg);
+          transform: rotate(60deg);
+  -webkit-transition: var(--great-transition);
+  -o-transition: var(--great-transition);
+  transition: var(--great-transition);
+}
+
+.brown-circle {
+  -webkit-animation: rotate 2s infinite 0.6s;
+          animation: rotate 2s infinite 0.6s;
+  width: 80px;
+  height: 80px;
+  border: 4px solid var(--red);
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  -webkit-transform: rotate(-20deg);
+      -ms-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+  border-radius: 50%;
+  -webkit-transition: var(--great-transition);
+  -o-transition: var(--great-transition);
+  transition: var(--great-transition);
+}
+
+@-webkit-keyframes rotate {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
 #header {
   position: relative;
   overflow: hidden;
@@ -2393,6 +2541,14 @@ a {
 @media screen and (max-width: 835px) {
   .partner-slider {
     width: 180%;
+  }
+  .partner-slider .swiper-slide {
+    width: auto;
+  }
+  .partner-slider .swiper-slide .partner {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
 }
 @media screen and (max-width: 600px) {
@@ -3344,7 +3500,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  width: 109%;
+  width: 100%;
   height: 100%;
 }
 

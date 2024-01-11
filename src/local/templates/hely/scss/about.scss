@@ -3,8 +3,7 @@
     background-color: var(--bg-alt);
     padding-top: 18.6rem;
     padding-bottom: 10.4rem;
-    box-sizing: border-box;
-    // overflow: hidden;
+    box-sizing: border-box; 
     .section-title{
         margin-bottom: 3rem;
     }
@@ -143,7 +142,14 @@
 @media screen and (max-width: 835px){ 
     .partner-slider{
         width: 180%;
+        .swiper-slide {
+            width: auto;
+            .partner{
+                width: fit-content;
+            }
+        }
     }
+
 }
 @media screen and (max-width: 600px){
     .decor-logo-box{

@@ -64,7 +64,7 @@ if(burgerBtn){
     let parentSlider = document.querySelector('.partner-slider');
     const swiper = new Swiper(parentSlider, {
         // Optional parameters  
-        slidesPerView: 5,
+        slidesPerView: "auto",
         loop: false,
         speed: 1000,
         loopAdditionalSlides: 1,
@@ -74,12 +74,11 @@ if(burgerBtn){
         breakpoints: {
             300: {
                 spaceBetween: 10,
-                slidesPerView: 3,
-                loop: true,
+                slidesPerView: "auto", 
             },
             835: {
                 spaceBetween: 20,
-                slidesPerView: 3,
+                slidesPerView: 3, 
                 loop: true,
             },
             1120: {
@@ -154,5 +153,20 @@ if(burgerBtn){
             let mask = IMask(item, {  mask: '000 000 000' });
         });
     } 
+
+
+    // установка размера карты
+    let mapElem = document.querySelector('#map');
+  
+    function autoWidthMap(){
+        if(mapElem && window.innerWidth > 650){ 
+            let bodyRect = document.body.getBoundingClientRect();
+            let mapElemRect = mapElem.getBoundingClientRect(); 
+            mapElem.style.width = Math.ceil(bodyRect.width - mapElemRect.x) + 'px';
+        }
+    }
+    
+    window.addEventListener('resize', autoWidthMap);
+    autoWidthMap();
     
 });
