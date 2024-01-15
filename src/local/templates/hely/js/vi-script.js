@@ -75,6 +75,7 @@ if(burgerBtn){
             300: {
                 spaceBetween: 10,
                 slidesPerView: "auto", 
+                loop: true,
             },
             835: {
                 spaceBetween: 20,
