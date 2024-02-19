@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function(){
      
    
     setTimeout(function(){
+        window.scrollTo(0,0);
         let preloader = document.querySelector('.preloader'); 
         preloader.classList.add('preloader-hide');
         setTimeout(function(){

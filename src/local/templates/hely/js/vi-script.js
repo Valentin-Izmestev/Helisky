@@ -37,25 +37,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // мобильное меню
 let burgerBtn = document.querySelector('.burger-btn');
-let nav = document.querySelector('nav'); 
-// let body = document.querySelector('body');
+let nav = document.querySelector('nav');  
 let scrollPosition = 0;
 let body = document.body;
 
 if(burgerBtn){
     burgerBtn.addEventListener('click', function(){ 
         burgerBtn.classList.toggle('burger-btn--active');
-        nav.classList.toggle('show-main-menu'); 
-
-        // if(body.classList.contains('fixed')){ 
-        //     body.classList.remove('fixed');
-        //     window.scrollTo(0, scrollPosition);
-        // }else{
-        //     scrollPosition = window.pageYOffset;
-        //     setTimeout(function(){
-        //         body.classList.add('fixed');
-        //     }, 400);
-        // } 
+        nav.classList.toggle('show-main-menu');  
 
     })
 }
@@ -154,8 +143,6 @@ if(burgerBtn){
             let mask = IMask(item, {  mask: '000 000 000' });
         });
     } 
-
-
     // установка размера карты
     let mapElem = document.querySelector('#map');
   

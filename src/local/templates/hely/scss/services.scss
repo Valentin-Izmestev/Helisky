@@ -139,13 +139,109 @@
         font-weight: 500;
     }
 }
+.world-map-img-box{
+    position: relative;
+    max-width: 1275px;
+    margin: 0 auto;
+    margin-top: 40px;
+    .world-map-marker{
+        position: absolute;
+        width: 3%; 
+        height: auto;
+        box-sizing: border-box;
+        z-index: 1;
+        cursor: pointer;
+        img{
+            display: block;
+            width: 100%;
+            height: auto;
+            z-index: 1;
+            opacity: 0;
+        }
+        
+        .world-map-marker-tooltip{
+            position: absolute;
+            top: 130%;
+            left: 50%;
+            padding: 1rem;
+            border-radius: 8px;
+            background-color: var(--bg-alt); 
+            transform: translateX(-50%);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--great-transition);
+            z-index: 5;
+            .world-map-marker-tooltip__title{
+                font-weight: 500;
+                white-space: nowrap;
+            }
+        }
+
+        &:hover{
+            .world-map-marker-tooltip{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        &.world-map-marker-1{
+            top: 59.1%;
+            left: 29.17%;
+            width: .85%; 
+        }
+        &.world-map-marker-2{
+            top: 57.6%;
+            left: 47.16%;
+            width: .85%;  
+        }
+        &.world-map-marker-3{
+            top: 60.64%;
+            left: 55.34%;
+            width: .85%;  
+        }
+        &.world-map-marker-4{
+            top: 42.75%;
+            left: 52.13%;
+            width: .7%; 
+        }
+        &.world-map-marker-5{
+            top: 41.15%;
+            left: 53.69%;
+            width: .85%;  
+        }
+        &.world-map-marker-6{
+            top: 50.13%;
+            left: 60.2%;
+            width: .85%;  
+        }
+        &.world-map-marker-7{
+            top: 42.65%;
+            left: 61.87%;
+            width: .85%;  
+        }
+        &.world-map-marker-8{
+            top: 39.65%;
+            left: 63.54%;
+            width: .85%;  
+        }
+        &.world-map-marker-9{
+            top: 47.1%;
+            left: 66.8%;
+            width: .85%;  
+        }
+        &.world-map-marker-10{
+            top: 63.7%;
+            left: 71.738%;
+            width: .8%; 
+        }
+    }
+}
 .world-map-img{
     display: block;
     max-width: 1275px;
     width: 100%;
     height: auto;
-    margin: 0 auto;
-    margin-top: 40px;
+    margin: 0 auto; 
 }
 
 // ===================================
@@ -164,10 +260,12 @@
                 order: 3;
                 grid-template-columns: repeat(2, 1fr);
             }
-            .world-map-img{ 
-                order: 2;
+            .world-map-img-box{ 
                 margin-top: 0;
                 margin-bottom: 40px;
+            }
+            .world-map-img{ 
+                order: 2;  
             }
         }
     }
@@ -185,10 +283,13 @@
                 grid-template-columns:1fr;
                 grid-gap: 4px;
             }
-            .world-map-img{ 
-                order: 1;
+            .world-map-img-box{ 
                 margin-top: 0;
                 margin-bottom: 40px;
+            }
+            .world-map-img{ 
+                order: 1;
+                margin-top: 0; 
             }
         }
     } 
